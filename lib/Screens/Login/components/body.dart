@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:my_app/components/NavBar.dart';
 import 'package:provider/provider.dart';
 import 'package:my_app/Screens/Inscription/inscription_screen.dart';
 import 'package:my_app/Screens/Login/components/background.dart';
@@ -61,13 +62,21 @@ class body extends StatelessWidget {
               };
               if (_formKey.currentState!.validate()) {
                 Provider.of<Auth>(context, listen: false).login(creds: creds);
-                Navigator.push(
-                  context,
+                Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                     builder: (context) {
-                      return welcomeScreen();
+                      return NavBarWidget();
                     },
                   ),
+                  /* 
+                  if (_formKey.currentState!.validate()) {
+                            Provider.of<Auth>(context, listen: false)
+                                .login(creds: creds);
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => BottomNavBar()));
+                          }
+                  */
                 );
               }
             },

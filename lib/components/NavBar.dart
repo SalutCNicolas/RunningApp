@@ -1,18 +1,24 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/Screens/Welcome/welcome_screen.dart';
 import 'package:my_app/screens/history_page.dart';
 
 import '../main.dart';
 import '../screens/home_page.dart';
 import '../screens/map_page.dart';
 
-class NavBarWidget extends State<MyHomePage> {
+class NavBarWidget extends StatefulWidget {
+  @override
+  _NavBarWidget createState() => _NavBarWidget();
+}
+
+class _NavBarWidget extends State<NavBarWidget> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
   int index = 0;
 
   final screens = [
     // ignore: prefer_const_constructors
-    HomePage(),
+    welcomeScreen(),
     MapSample(),
     HistoryPage(),
   ];
@@ -26,26 +32,24 @@ class NavBarWidget extends State<MyHomePage> {
     ];
 
     return Scaffold(
-        extendBody: true,
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body:screens[index],
-        bottomNavigationBar:Theme(
-          data:Theme.of(context).copyWith(
-            iconTheme: IconThemeData(color: Colors.black,),
+      extendBody: true,
+      body: screens[index],
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          iconTheme: IconThemeData(
+            color: Colors.black,
           ),
-          child: CurvedNavigationBar(
+        ),
+        child: CurvedNavigationBar(
           key: navigationKey,
           backgroundColor: Colors.transparent,
           buttonBackgroundColor: Colors.white,
           height: 50,
           index: index,
           items: items,
-          onTap:(index)=>setState(()=>this.index=index),
-          
-          ),
+          onTap: (index) => setState(() => this.index = index),
         ),
-      );
+      ),
+    );
   }
 }

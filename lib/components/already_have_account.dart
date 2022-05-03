@@ -4,7 +4,7 @@ import 'package:my_app/color.dart';
 class AlreadyHaveAnAccountCheck extends StatelessWidget {
   final bool login;
   final VoidCallback press;
-  const AlreadyHaveAnAccountCheck({
+  const   AlreadyHaveAnAccountCheck({
     Key? key,
     required this.login,
     required this.press,
