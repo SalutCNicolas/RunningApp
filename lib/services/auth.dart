@@ -15,10 +15,10 @@ class Auth extends ChangeNotifier {
   bool get authenticated => _isLoggedIn;
   User get user => _user;
 
-  void login({required Map creds}) async {
+  void  login({required Map creds}) async {
     try {
       Dio.Response response = await dio().post('/sanctum/token', data: creds);
-      print(response.data.toString());
+      //   print(response.data.toString());
       String token = response.data.toString();
       this.tryToken(token: token);
       _isLoggedIn = true;

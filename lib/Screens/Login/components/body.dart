@@ -58,7 +58,6 @@ class body extends StatelessWidget {
               Map creds = {
                 'email': myControllerEmail.text,
                 'password': myControllerMdp.text,
-                'device_name': 'mobile',
               };
               if (_formKey.currentState!.validate()) {
                 Provider.of<Auth>(context, listen: false).login(creds: creds);
@@ -68,15 +67,6 @@ class body extends StatelessWidget {
                       return NavBarWidget();
                     },
                   ),
-                  /* 
-                  if (_formKey.currentState!.validate()) {
-                            Provider.of<Auth>(context, listen: false)
-                                .login(creds: creds);
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (context) => BottomNavBar()));
-                          }
-                  */
                 );
               }
             },

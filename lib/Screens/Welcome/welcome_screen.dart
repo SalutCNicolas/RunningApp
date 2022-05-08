@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:my_app/Screens/Accueil/accueil_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:my_app/Screens/Accueil/components/background.dart';
 import 'package:my_app/Screens/Accueil/components/body.dart';
@@ -56,6 +57,21 @@ class _WelcomeScreen extends State<welcomeScreen> {
             }
           },
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              Provider.of<Auth>(context, listen: false).logout();
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return accueilScreen();
+                  },
+                ),
+              );
+            },
+          ),
+        ],
         centerTitle: true,
         pinned: true,
         backgroundColor: Color(0xFFff6369),

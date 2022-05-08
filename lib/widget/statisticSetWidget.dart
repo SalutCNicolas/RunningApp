@@ -27,9 +27,6 @@ class StatisticSetWidget extends StatelessWidget {
       );
 
   Widget buildText() {
-    final stat = statisticSet.statistics.length;
-    final minutes = statisticSet.totalDuration;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +34,6 @@ class StatisticSetWidget extends StatelessWidget {
         Text(statisticSet.name,
             style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20)),
         SizedBox(height: 10),
-        Text('$stat Statistic $minutes Mins'),
       ],
     );
   }

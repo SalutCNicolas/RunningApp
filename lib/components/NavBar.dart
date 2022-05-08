@@ -4,7 +4,6 @@ import 'package:my_app/Screens/Welcome/welcome_screen.dart';
 import 'package:my_app/screens/history_page.dart';
 
 import '../main.dart';
-import '../screens/home_page.dart';
 import '../screens/map_page.dart';
 
 class NavBarWidget extends StatefulWidget {

@@ -6,7 +6,7 @@ import 'package:my_app/color.dart';
 import 'package:my_app/services/auth.dart';
 
 void main() {
-  runApp(MyApp2());
+  runApp(MyApp2()); 
 }
 
 class MyApp2 extends StatelessWidget {

@@ -19,7 +19,7 @@ class _StatisticWidgetState extends State<StatisticWidget> {
           delegate: SliverChildListDelegate([
             SizedBox(height: 8),
             Text(
-              'Statistic',
+              'Bien être',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             SizedBox(height: 8),
